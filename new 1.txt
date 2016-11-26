@@ -1,0 +1,32 @@
+var express =require('express');
+
+var app=express();
+
+app.use(express.static('public'));
+
+var mytasks=[{
+	
+	description:'go to market',
+	completed:true
+	},
+	{  description:'go to movies',
+	  completed:true
+	},
+	{
+		description:'meet friends',
+	    completed:true
+	}
+	];
+app.get('/getmytasks',function(req,res)
+{
+	res.json(mytasks);
+	
+});
+
+
+app.listen(3000,function()
+{
+	console.log('app is running on port 3000');
+	
+	
+});
